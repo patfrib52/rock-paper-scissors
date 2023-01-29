@@ -19,7 +19,11 @@ function playRound(playerSelection, computerSelection){
     ){
         computerScore++;
         return console.log(`computer win! ${computerSelection} beats ${playerSelection}`);
-    } else {
+    } else if (
+        (playerSelection == 'rock' && computerSelection == 'scissors') ||
+        (playerSelection == 'paper' && computerSelection == 'rock') ||
+        (playerSelection == 'scissors' && computerSelection == 'paper')
+    ){
         playerScore++;
         return console.log(`player win! ${playerSelection} beats ${computerSelection}`);
     }    
@@ -28,8 +32,8 @@ function playRound(playerSelection, computerSelection){
 function game(){   
 
     for (let i = 0; i < 5; i++){
-        const computerSelection = getComputerChoice();         
-        const playerSelection = window.prompt('rock, paper or scissors?');
+        computerSelection = getComputerChoice();         
+        playerSelection = window.prompt('rock, paper or scissors?');
         playerSelection.toLowerCase;
         playRound(playerSelection, computerSelection);
         console.log(playerScore, computerScore);
