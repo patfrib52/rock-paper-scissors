@@ -1,25 +1,61 @@
-// Rock > scissors;
-// Paper > Rock;
-// Scissors >Paper;
+// Rock > scissors.
+// Paper > Rock.
+// Scissors > Paper.
+// Computer Randomly Chooses Between Rock, Paper, Scissors,
+// Compare the Two Choices and Declare a Winner.
 
-// Player Choose Between Rock, Paper, Scissors
-// Computer Randomly Chooses Between Rock, Paper, Scissors
-// Compare the Two Choices and Declare a Winner
+const choices = ["rock", "paper", "scissors"];
+let humanScore = 0;
+let computerScore = 0;
+
+// This function select random selection every time this function is call.
+
+function getComputerChoice() {
+    
+    let computerChoice = Math.floor(Math.random()* choices.length);
+    return computerAnswer = (choices[computerChoice]);
+    
+};
 
 
+// This function get the player selection in lowercase.
 
+function getHumanChoice(){
+    // for (let i = 0; i < choices.length; i++) {
+        let humanChoice = prompt("Rock, Paper, Scissors", );
+        return answer = humanChoice.toLowerCase();
+        
+    // }
+    
+};
 
-const choices = ["Rock", "Paper", "Scissors"];
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-// Create a Function that automate the Computer Answer,
-// and return the choice.
+// // This function get account the score and who win.
 
-function getComputerAnswer(answer){
-    for (let i = 0; i < choices.length; i++) {
+function playRound(humanChoice, computerChoice) {
+   
+    console.log(humanChoice, computerChoice);
 
-        let computerChoice = choices[i];
-        console.log(computerChoice);
-    }
-    };
- 
-getComputerAnswer();
+ switch (humanChoice + computerChoice) {
+     // you win.
+     case "rockscissors":
+         case "paperrock":
+             case "scissorspaper":
+                 console.log("you win!")
+                 break;
+                 // you loose.
+                 case "scissorsrock":
+                     case "rockpaper":
+                         case "paperscissors":
+                             console.log("you loose!")
+                             break;
+                             // its a tie.
+                             default:
+                                 console.log("its a tie!");
+ }
+
+}
+
+playRound(humanSelection, computerSelection);
